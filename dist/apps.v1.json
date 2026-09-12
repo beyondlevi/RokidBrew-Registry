@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-12T06:43:12.184Z",
+  "generatedAt": "2026-09-12T09:20:43.657Z",
   "brewVersion": "0.2.2",
   "brewVersionCode": 12,
   "brewApkUrl": "https://github.com/Anezium/RokidBrew/releases/download/v0.2.2/RokidBrew-phone-v0.2.2-debug.apk",
@@ -14,291 +14,83 @@
   ],
   "apps": [
     {
-      "id": "rokid-nexus",
-      "name": "Rokid Nexus",
-      "category": "Launcher",
+      "id": "m365-rokid-hud",
+      "name": "M365 Rokid HUD",
+      "category": "Mobility",
       "type": "combo",
-      "version": "1.4.3",
-      "summary": "Rokid Nexus plugin platform for Rokid Glasses RV101 with phone app integration",
-      "description": "Rokid Nexus is a plugin platform for Rokid AR glasses that uses a phone app to install and manage glasses apps. Plugins run isolated on the glasses HUD and update via the phone app store.",
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
+      "version": "1.4.0",
+      "summary": "BLE scooter telemetry HUD for Rokid glasses with real-time Xiaomi M365 data display",
+      "description": "M365 Rokid HUD connects to Xiaomi M365 scooters via BLE to show real-time telemetry on Rokid AR glasses. The phone app manages BLE and the glasses app renders the HUD. Requires Android 10+ and Bluetooth permissions.",
       "phoneRequired": true,
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.4.3/nexus-glasses-1.4.3.apk",
-          "sha256": "1f52e5e74868c69661b3ab414783bfb4ad9fd008b186b030434d32826086e110",
-          "sizeBytes": 19260551,
-          "packageName": "com.anezium.rokidbus.glasses",
-          "versionCode": 10403,
-          "versionName": "1.4.3"
+          "url": "https://github.com/zero2005x/M365-Rokid-HUD/releases/download/v1.4.0/M365-Rokid-HUD-glasses-v1.4.0.apk",
+          "sha256": "0f36911ba9b1c1ad349e6127566355605161e1cf38aafc330cab0a4881dcd284",
+          "sizeBytes": 9799187,
+          "packageName": "com.m365hud.glass",
+          "versionCode": 5,
+          "versionName": "1.4.0"
         },
         {
           "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.4.3/nexus-phone-1.4.3.apk",
-          "sha256": "6d8f37f32c77995ef9601fba0caaaf4e91f6e94d35c939aef07c3f30f7debff0",
-          "sizeBytes": 18553013,
-          "packageName": "com.anezium.rokidbus.phone",
-          "versionCode": 10403,
-          "versionName": "1.4.3"
+          "url": "https://github.com/zero2005x/M365-Rokid-HUD/releases/download/v1.4.0/M365-Rokid-HUD-phone-v1.4.0.apk",
+          "sha256": "1272150e7573020eb563cecbb6271325654793e6db3cc6555254a0b6c9c25266",
+          "sizeBytes": 27086808,
+          "packageName": "com.m365bleapp",
+          "versionCode": 7,
+          "versionName": "1.4.0"
         }
       ],
-      "releases": [
-        {
-          "version": "1.4.3",
-          "date": "2026-08-11T22:13:23Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.3",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.2.11",
-          "date": "2026-08-07T19:10:51Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.2.11",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.2.6",
-          "date": "2026-08-06T22:50:10Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.2.6",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.1.3",
-          "date": "2026-08-01T00:02:48Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.1.3",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.0.48",
-          "date": "2026-07-29T00:03:13Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.0.48",
-          "notes": "### Activities\n\n- A new tier between a pin and a surface: an ongoing process — a ride\n  approaching, a timer running, a transfer in flight — holds a stable corner\n  of the HUD. It draws as a compact chip, and the primary activity can open\n  into a panel with progress, details, and up to three platform-drawn\n  actions the wearer steps through with scroll and fires with a tap.\n- A significant update lets the panel flare to catch the eye — throttled by\n  the platform, and never by holding the screen on: an activity still cannot\n  wake or keep the display, exactly like every other tier.\n- An idle panel folds back to its chip after about ten seconds. A new\n  Settings switch keeps the primary activity expanded instead; it is the\n  wearer's preference, and no plugin can read, set, or override it.\n\n### Notices learn to ask a real question\n\n- A notice can now carry up to three answers, drawn as glyph chips under\n  the band — the same row an activity panel uses, drawn by the same view,\n  so the wearer learns it once. Scroll steps along it, the selection wraps\n  and follows its answer across updates, and a tap fires the one that is\n  chosen.\n- A notice takes exactly one answer, of either kind. The moment it is\n  given, the row leaves the band, nothing fires again, and the phone\n  refuses a duplicate — measured on hardware, two temple taps 188 ms apart\n  used to mean two replies sent. This deliberately changes 1.0.46\n  behaviour, where an interactive band replied on every tap.\n- Clearing a field of a shown notice now actually reaches the glasses: the\n  phone relays the patch a plugin sent instead of re-serialising its own\n  state, so an emptied footer, a withdrawn question, or a cleared row\n  arrives as exactly that.\n\n### Plugin SDK 0.6.0\n\n- The activity tier and notice actions land in the SDK: `NexusActivity`,\n  `NexusNoticeAction`, `actions` on notices and their updates, the\n  `onNexusActivityAction` and `onNexusNoticeAction` callbacks, and a\n  nullable `interactive` on `NexusNoticeUpdate` so a band can be asked\n  again.\n- The guide gains a visual reference of the notice band's four states,\n  with the one-answer rule as an interactive demo\n  (`docs/notice-band-states.html`).",
-          "changes": [
-            "A new tier between a pin and a surface: an ongoing process — a ride",
-            "A significant update lets the panel flare to catch the eye — throttled by",
-            "An idle panel folds back to its chip after about ten seconds. A new",
-            "A notice can now carry up to three answers, drawn as glyph chips under",
-            "A notice takes exactly one answer, of either kind. The moment it is",
-            "Clearing a field of a shown notice now actually reaches the glasses: the",
-            "The activity tier and notice actions land in the SDK: NexusActivity,",
-            "The guide gains a visual reference of the notice band's four states,"
-          ]
-        },
-        {
-          "version": "1.0.47",
-          "date": "2026-07-28T16:24:12Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.0.47",
-          "notes": "### Phone battery\n\n- Your phone's charge now sits in the glasses' status row, beside the clock\n  and the weather: a small phone glyph and the percentage, with a plus while\n  it charges. The glasses always knew their own battery; now they admit the\n  phone they depend on has one too.\n- The chip behaves like the ROM's own indicators. It shows on the launcher\n  and its screens, follows the status row when an app like the teleprompter\n  moves it, tucks in beside the clock when the weather steps out, and never\n  sits on top of anything.\n- Not interested? Settings has a switch. Off means off — the chip leaves\n  immediately and stays gone.\n\n### Plugin marks\n\n- A plugin's own icon now reaches the glasses. Until now a custom mark showed\n  on the phone and fell back to a generic tile in the glasses launcher, which\n  never had the plugin's APK to load it from; the mark itself now travels, as\n  bare geometry the glasses draw in the HUD's one green.\n- The design system holds: a plugin ships a shape, never a colour, a size, or\n  a look. Tests now catch a mark that drifts from the rules instead of prose\n  hoping it will not.",
-          "changes": [
-            "Your phone's charge now sits in the glasses' status row, beside the clock",
-            "The chip behaves like the ROM's own indicators. It shows on the launcher",
-            "Not interested? Settings has a switch. Off means off — the chip leaves",
-            "A plugin's own icon now reaches the glasses. Until now a custom mark showed",
-            "The design system holds: a plugin ships a shape, never a colour, a size, or"
-          ]
-        },
-        {
-          "version": "1.0.46",
-          "date": "2026-07-26T22:43:53Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.0.46",
-          "notes": "### Notices\n\n- Plugins can interrupt you briefly with a band across the top of your view: a\n  message that just arrived, a delivery at the door, one thing that happened\n  and is worth a glance. It arrives, says its piece, and leaves on its own.\n- You can answer one without opening anything. Tap the band and the plugin\n  hears you, even though it has no screen open and never did — which is the\n  point of the whole thing. Back always dismisses, and no plugin can take that\n  key away from you.\n- A band claims two gestures, not your glasses. Scroll still reaches whatever\n  is underneath it, the launcher still opens, and every other control keeps\n  working while a notice is up.\n- Nothing can leave a band in your view: it clears on its own deadline, and no\n  amount of updating it pushes past a minute.\n\n### Motion\n\n- The HUD moves now. Bands slide in and out instead of appearing, and the whole\n  interface shares one set of timings rather than each screen inventing its\n  own.\n- Motion marks something happening, never decoration. Nothing on the glasses\n  animates in a loop while you are wearing them and walking around.",
-          "changes": [
-            "Plugins can interrupt you briefly with a band across the top of your view: a",
-            "You can answer one without opening anything. Tap the band and the plugin",
-            "A band claims two gestures, not your glasses. Scroll still reaches whatever",
-            "Nothing can leave a band in your view: it clears on its own deadline, and no",
-            "The HUD moves now. Bands slide in and out instead of appearing, and the whole",
-            "Motion marks something happening, never decoration. Nothing on the glasses"
-          ]
-        }
-      ],
-      "screenshotAssets": [
-        "rokid-nexus-1.png",
-        "rokid-nexus-2.png",
-        "rokid-nexus-3.png",
-        "rokid-nexus-4.png",
-        "rokid-nexus-5.png"
-      ],
+      "author": "zero2005x",
+      "sourceUrl": "https://github.com/zero2005x/M365-Rokid-HUD",
       "listing": {
-        "descriptionMarkdown": "## About\nRokid Nexus is a plugin platform for Rokid AR glasses RV101. It installs a phone app that manages glasses apps, which run as isolated plugins on the glasses HUD.\n\n## Key features\n- Plugins run in separate processes on the glasses, appearing only after user approval\n- Declarative HUD surfaces: cards, timed lines, media decks, and images\n- In-app Nexus Store installs and updates plugins securely with signature verification\n\n## Plugins include\n- Lens: live translation with camera streaming and offline OCR\n- Feeds: Bluesky and X timelines with photo viewing\n- Transit: nearby stops and live departures\n- Lyrics: time-synced lyrics for music playing on the phone\n- Media Deck: now playing info with controls\n- Photos Sync: copies glasses photos to phone gallery\n\n## How it works\n- Install the Nexus phone app\n- Follow onboarding to push the glasses app via Rokid link\n- Enable accessibility service on glasses\n- Install plugins from the Nexus Store\n\n## Requirements\n- Rokid Glasses RV101\n- Companion Android phone (Android 11+)\n\n## Notes\n- Plugins request capabilities per user approval\n- Phone app updates from GitHub releases; glasses and plugins update over the link and store"
-      },
-      "publishedAt": "2026-08-11T22:13:23Z",
-      "newUntil": "2026-08-13T22:13:23.000Z",
-      "iconAsset": "rokid-nexus.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-nexus.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-1.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-2.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-3.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-4.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-5.png"
-      ]
-    },
-    {
-      "id": "r08-access-bridge",
-      "name": "R08 Access Bridge",
-      "category": "Navigation",
-      "type": "glasses",
-      "version": "2.0.1",
-      "featured": true,
-      "featuredRank": 2,
-      "summary": "Use the R08 smart ring as a navigation controller for Rokid glasses",
-      "description": "R08 Access Bridge pairs an R08 smart ring via Bluetooth LE to control Rokid glasses navigation. It translates ring input into launcher navigation, app focus movement, activation, and Back actions using an Accessibility Service.",
-      "author": "Anezium",
-      "sourceUrl": "https://github.com/Anezium/R08-Access-Bridge",
-      "phoneRequired": false,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/Anezium/R08-Access-Bridge/releases/download/v2.0.1/R08-Access-Bridge-v2.0.1.apk",
-          "sha256": "97b674932eb504a54dc78ff625d772943f10149c475a8e0389649b448d3ec26e",
-          "sizeBytes": 18544074,
-          "packageName": "com.anezium.r08accessbridge",
-          "versionCode": 36,
-          "versionName": "2.0.1"
-        }
-      ],
-      "releases": [
-        {
-          "version": "2.0.1",
-          "date": "2026-08-11T11:58:10Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v2.0.1",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "2.0.0",
-          "date": "2026-08-04T15:11:10Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v2.0.0",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.7.0",
-          "date": "2026-07-23T22:25:23Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.7.0",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.6.4",
-          "date": "2026-07-15T11:12:42Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.6.4",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.6.1",
-          "date": "2026-07-08T17:32:37Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.6.1",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.5.0",
-          "date": "2026-07-03T11:44:31Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.5.0",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.8-unsigned.apk",
-          "date": "2026-07-02T20:58:19Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.8",
-          "notes": null,
-          "changes": []
-        },
-        {
-          "version": "1.4.7",
-          "date": "2026-06-28T11:02:53Z",
-          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.7",
-          "notes": null,
-          "changes": []
-        }
-      ],
-      "screenshotAssets": [
-        "r08-access-bridge.png",
-        "r08-access-bridge-2.png",
-        "r08-access-bridge-3.png",
-        "r08-access-bridge-4.png"
-      ],
-      "listing": {
-        "descriptionMarkdown": "# About\nR08 Access Bridge lets you use an R08 smart ring as a one-axis navigation controller for Rokid glasses. It pairs with the ring over Bluetooth LE and converts ring inputs into launcher navigation, app focus movement, activation, and Android Back actions.\n\n# Key Features\n- Connects or reconnects to an R08 ring via Bluetooth LE\n- Default Stable mode emits media key events for reliable one-step launcher navigation\n- Supports Fast mode with accelerated launcher swipes and Touch fallback mode\n- Remap triple and quadruple tap actions directly from the glasses UI\n- Provides an AppType probe screen for testing ring output modes\n- Safe Forget R08 flow to remove Bluetooth bond and pair again\n\n# Controls\n- Forward/backward ring slides move launcher or app focus\n- Single tap activates the focused item\n- Double tap performs Android Back\n- Triple and quadruple taps are configurable (default triple tap opens Rokid AI assistant)\n\n# Requirements\n- Rokid glasses with Android SDK 28+\n- R08 smart ring with Bluetooth LE\n- Accessibility permission enabled for R08 Access Bridge\n\n# Notes\n- Stable mode is recommended for most users\n- Fast mode is for devices with stable visual focus alignment\n- Touch fallback is for debugging or when media key input is unavailable\n- Designed specifically for Rokid glasses HUD, not phone-first UI"
-      },
-      "publishedAt": "2026-08-11T11:58:10Z",
-      "newUntil": "2026-08-13T11:58:10.000Z",
-      "iconAsset": "r08-access-bridge.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/r08-access-bridge.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-2.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-3.png",
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-4.png"
-      ]
-    },
-    {
-      "id": "ek-world-radio",
-      "name": "EK World Radio",
-      "category": "Media",
-      "type": "glasses",
-      "version": "2.1.0",
-      "publishedAt": "2026-08-10T08:39:34Z",
-      "summary": "Listen to global radio stations easily",
-      "description": "Stream radio stations from around the world on Rokid Glasses. The app resumes your last station automatically and requires a Wi-Fi connection.",
-      "listing": {
-        "descriptionMarkdown": "## About\nStream radio stations from around the world on Rokid Glasses. EK World Radio automatically resumes the last station you listened to when you reopen the app.\n\nA Wi-Fi connection is required for streaming.\n\n## Controls\n\n- **Browse channels:** Touch the right temple of the glasses to switch stations.\n- **Resume playback:** Your last station starts again when you reopen the app.\n- **Network:** Keep Wi-Fi connected for uninterrupted listening."
+        "descriptionMarkdown": "# About\nM365 Rokid HUD is an Android app that connects to Xiaomi/Ninebot M365 electric scooters via Bluetooth Low Energy (BLE) and displays real-time telemetry on Rokid AR glasses as a heads-up display (HUD).\n\n# Key Features\n- Automatic BLE scanning and discovery of nearby M365 scooters\n- Secure pairing with ECDH key exchange and token-based login\n- Real-time telemetry including speed, battery, temperature, and mileage\n- Remote motor lock/unlock and tail light control\n- Signal quality and data freshness indicators on the HUD\n- Multi-language support (11 languages)\n- Modern UI built with Jetpack Compose and Material3\n\n# How It Works\n- The phone app connects to the scooter via BLE and handles all communication.\n- Enable the \"Rokid HUD Gateway\" on the phone app to broadcast telemetry data.\n- The Rokid glasses app scans for the phone's gateway and displays telemetry in AR.\n\n# Requirements\n- Android 10 (API 29) or higher on the phone\n- Bluetooth and Location permissions for BLE scanning\n- Rokid AR glasses with the companion HUD app installed\n\n# Notes\n- Registration unpairs the scooter from other apps; register only your own devices.\n- Disable battery optimization on the phone app to maintain stable BLE connection.\n- The HUD shows speed, scooter battery, phone battery, glasses battery, current time, and signal quality.\n\n# Source\n[GitHub Repository](https://github.com/zero2005x/M365-Rokid-HUD)"
       },
       "releases": [
         {
-          "version": "2.1.0",
-          "date": "2026-08-10T08:39:34Z",
-          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
-          "notes": null,
+          "version": "1.4.0",
+          "date": "2026-09-11T16:13:26Z",
+          "sourceReleaseUrl": "https://github.com/zero2005x/M365-Rokid-HUD/releases/tag/v1.4.0",
+          "notes": "# v1.4.0 — 2025/2026 Google Play Compliance, API Modernization & AAB Packaging | 應用商店合規性、API 現代化與 AAB 打包\n\nThis release updates the project to the latest Android 16 (API 36) specifications, fully satisfies Google Play Store 2025/2026 publishing policies, packages both APK and AAB (Android App Bundle) artifacts, resolves deprecated APIs, and integrates automated CI & SonarQube code quality pipelines.\n\n本次發布全面更新至 Android 16 (API 36) 最新標準，全方位符合 Google Play Store 2025/2026 最新上架政策，同步打包 APK 與 AAB (Android App Bundle) 檔案，修復過時 API，並整合自動化 CI 測試與 SonarQube 代碼品質檢查流水線。\n\n---\n\n## Downloads | 檔案下載\n\n| File 檔案 | Format 格式 | Description | 說明 |\n| :--- | :---: | :--- | :--- |\n| **M365-Rokid-HUD-phone-v1.4.0.apk** | APK | Phone app — M365 BLE client + Rokid gateway (sideload) | 手機端 — M365 BLE 用戶端 + Rokid 閘道（直接安裝） |\n| **M365-Rokid-HUD-glasses-v1.4.0.apk** | APK | Glasses app — Rokid AR HUD display (sideload) | 眼鏡端 — Rokid AR 抬頭顯示器（直接安裝） |\n| **M365-Rokid-HUD-phone-v1.4.0.aab** | AAB | Phone app — Google Play publishing bundle | 手機端 — Google Play 商店上架專用 App Bundle |\n| **M365-Rokid-HUD-glasses-v1.4.0.aab** | AAB | Glasses app — Google Play publishing bundle | 眼鏡端 — Google Play 商店上架專用 App Bundle |\n| **SHA256SUMS.txt** | Checksums | SHA256 hashes for all release artifacts | 所有發布產物之 SHA256 雜湊驗證碼 |\n\nVerify downloads | 下載驗證指令：\n```powershell\nGet-FileHash .\\M365-Rokid-HUD-phone-v1.4.0.apk -Algorithm SHA256\n```\n```bash\nsha256sum -c SHA256SUMS.txt\n```\n\n---\n\n## Highlights & Changes | 重點更新與變更\n\n### 1. Google Play Store 2025/2026 Policy Compliance | 符合應用商店最新政策\n- **16 KB Memory Page Size Support (強制 16 KB 記憶體分頁對齊)**:\n  - Ensured all native shared libraries (`libninebot_ffi.so`) across all 4 architectures (`arm64-v8a`, `armeabi-v7a`, `x86`, `x86_64`) strictly comply with 16 KB ELF segment alignment (`p_align >= 0x4000`), passing Google Play 2025/2026 mandatory verification.\n  - 確保所有四種架構的 Rust 原生動態庫均符合 16 KB 分頁對齊標準，完全滿足 Google Play 強制要求。\n- **Battery Optimization Policy Compliance (移除高風險電池權限)**:\n  - Removed restricted `REQUEST_IGNORE_BATTERY_OPTIMIZATIONS` permission from manifests to eliminate Google Play companion app rejection risks.\n  - Replaced direct exemption requests with safe system settings navigation (`Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS`), allowing users to grant unrestricted battery usage voluntarily.\n  - 徹底移除高被拒風險的受限權限，改由安全引導使用者至系統電池設定進行手動排除。\n- **Foreground Service & Data Safety (前台服務與資料安全)**:\n  - Both foreground services declare `connectedDevice` type and `FOREGROUND_SERVICE_CONNECTED_DEVICE` permission, with runtime checks before activation.\n  - Preserved `neverForLocation` flags and capped location permissions to API 30, eliminating redundant location disclosures in modern Data Safety forms.\n  - 確保前台服務型態與藍牙權限檢驗完全符合規範，且免除現代 Android 上的非必要位置追蹤申報。\n\n### 2. API Modernization & Platform Features | API 現代化與系統特性\n- **Target SDK 36 (Android 16)**:\n  - Full compatibility with Android 15 & Android 16 runtime behaviors.\n  - 完全適配 Android 15 與 Android 16 平台最新行為規範。\n- **Edge-to-Edge Enforced Display (邊緣延伸全螢幕適配)**:\n  - Added explicit `enableEdgeToEdge()` call in `MainActivity`, ensuring seamless full-screen layout across all Android versions.\n  - 在 `MainActivity` 啟用邊緣到邊緣繪製，配合 `Scaffold` 提供沉浸式版面。\n- **Predictive Back Navigation (預測性返回支援)**:\n  - Enabled `android:enableOnBackInvokedCallback=\"true\"` in both phone and glasses manifests for modern gesture animations.\n  - 雙模組清單皆啟用預測性返回回調，支援系統返回動畫。\n- **Deprecated API Fixes (修復過時 API)**:\n  - `BluetoothHelper`: Replaced deprecated `Settings.Secure.LOCATION_MODE` with `LocationManager.isLocationEnabled` on API 28+.\n  - `LocaleHelper`: Replaced deprecated `Locale(String, String)` constructors with modern `Locale.Builder()`.\n  - `LogViewerScreen`: Upgraded deprecated Material 3 `TabRow` to `PrimaryTabRow`.\n  - `WifiGatewayClient`: Replaced deprecated `serviceInfo.host` with `serviceInfo.hostAddresses` on API 34+.\n  - Dependencies: Upgraded `androidx.core:core-ktx` to `1.17.0` and `androidx.lifecycle:lifecycle-runtime-ktx` to `2.10.0`.\n\n### 3. Release & CI Automation | 發布與持續整合自動化\n- **AAB & APK Dual Packaging (支援 AAB 與 APK 雙發布)**:\n  - Release workflow now automatically produces, signs, and attaches both `.apk` and `.aab` artifacts to GitHub Releases.\n  - 自動化發布流水線全面支援同時建置、簽名並上傳 APK 與 Google Play 專用的 AAB 格式。\n- **CI Pipeline with SonarQube (CI 與程式碼品質檢查)**:\n  - Added `.github/workflows/ci.yml` running unit tests, debug builds, 16 KB page alignment verification, and SonarQube static code analysis on every push and pull request.\n  - 建立正式的 CI 流水線，自動執行單元測試、16 KB 分頁對齊驗證以及 SonarQube 代碼品質掃描。",
+          "changes": [
+            "16 KB Memory Page Size Support (強制 16 KB 記憶體分頁對齊):",
+            "確保所有四種架構的 Rust 原生動態庫均符合 16 KB 分頁對齊標準，完全滿足 Google Play 強制要求。",
+            "Battery Optimization Policy Compliance (移除高風險電池權限):",
+            "Removed restricted REQUESTIGNOREBATTERYOPTIMIZATIONS permission from manifests to eliminate Google Play companion app rejection risks.",
+            "徹底移除高被拒風險的受限權限，改由安全引導使用者至系統電池設定進行手動排除。",
+            "Foreground Service & Data Safety (前台服務與資料安全):",
+            "Both foreground services declare connectedDevice type and FOREGROUNDSERVICECONNECTEDDEVICE permission, with runtime checks before activation.",
+            "Preserved neverForLocation flags and capped location permissions to API 30, eliminating redundant location disclosures in modern Data Safety forms."
+          ]
+        },
+        {
+          "version": "1.3.1",
+          "date": "2026-08-08T09:24:24Z",
+          "sourceReleaseUrl": "https://github.com/zero2005x/M365-Rokid-HUD/releases/tag/v1.3.1",
+          "notes": "<html>\n<body>\n<html><head></head><body><h1>v1.3.1 — Glasses APK &amp; Release Automation | 眼鏡端 APK 與發布自動化</h1>\n<p>This is a <strong>packaging and build-correctness release</strong>. The phone app's\napplication code is unchanged from v1.3; everything below concerns the glasses\napp, the native library, and how releases are produced.</p>\n<p>這是一次<strong>打包與建置正確性</strong>的發布。手機端的應用程式碼與 v1.3 相同；以下變更集中在眼鏡端、原生函式庫，以及發布流程本身。</p>\n<hr>\n<h2>Downloads | 下載</h2>\n\nAPK | Description | 說明 | Size\n-- | -- | -- | --\nM365-Rokid-HUD-phone-v1.3.1.apk | Phone app — M365 BLE client + Rokid gateway | 手機端 — M365 BLE 用戶端 + Rokid 閘道 | 24.6 MB\nM365-Rokid-HUD-glasses-v1.3.1.apk | Glasses app — Rokid AR HUD display | 眼鏡端 — Rokid AR 抬頭顯示器 | 11.4 MB\nSHA256SUMS.txt | Checksums for both APKs | 兩顆 APK 的雜湊值 | —\n\n<hr>\n<h2>Known Limitations | 已知限制</h2>\n<ul>\n<li><strong>CXR-M channel discovery is not implemented.</strong> <code>UnifiedConnectionManager</code>\ncannot obtain an ARTC channel id automatically, so the CXR-M path falls back\nto Wi-Fi or BLE unless a channel id is supplied explicitly. The R8 fix above\nmakes the transport <em>reachable</em>; it does not complete the discovery mechanism.\n<strong>CXR-M 頻道探索尚未實作。</strong> <code>UnifiedConnectionManager</code> 無法自動取得 ARTC channel\nid，因此除非明確指定，CXR-M 路徑會退回 Wi-Fi 或 BLE。上述 R8 修正讓該傳輸<em>可被觸及</em>，\n但並未完成探索機制。</li>\n<li>The glasses release build now runs R8 for the first time. If you encounter\nbehaviour that differs from a debug build, please open an issue.\n眼鏡端 release 版本首次啟用 R8。若發現與 debug 版本行為不同，請回報 issue。</li>\n</ul>\n<hr>\n<h2>Upgrade Notes | 升級說明</h2>\n<p>Coming from <strong>v1.3</strong>: install both APKs. The phone app's behaviour is unchanged;\nthe glasses app gains a working CXR-M code path and is signed and versioned\nalongside the phone app for the first time.</p>\n<p>從 <strong>v1.3</strong> 升級：請安裝兩顆 APK。手機端行為不變；眼鏡端修復了 CXR-M 程式路徑，\n並首次與手機端採用一致的簽章與版本編號。</p>\n<p>Coming from <strong>v1.1 or earlier</strong>: see the v1.3 release notes for the Wi-Fi\ngateway and security hardening changes introduced there.</p>\n<p>從 <strong>v1.1 或更早版本</strong>升級：Wi-Fi 閘道與安全性強化的內容請參閱 v1.3 的發布說明。</p>\n<p><strong>Full Changelog</strong>: https://github.com/zero2005x/M365-Rokid-HUD/compare/v1.3...v1.3.1</p></body></html>\n</body>\n</html>",
           "changes": []
         },
         {
-          "version": "2.0.0",
-          "date": "2026-08-07",
-          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
-          "notes": "Latest public build from EUNG SOFT's shared Rokid Glasses release.",
+          "version": "1.1",
+          "date": "2026-01-11T08:03:13Z",
+          "sourceReleaseUrl": "https://github.com/zero2005x/M365-Rokid-HUD/releases/tag/v1.1",
+          "notes": "##  New Features | 新功能\n\n###  Connection Quality Indicator | 連線品質指標\n- Real-time signal strength display on glasses HUD\n- Stale data warning when telemetry delayed > 2 seconds\n- Session statistics: packets, RSSI avg/min/max, reconnect count\n\n###  Battery Optimization | 電池優化\n- Phone app now prompts user to disable battery optimization\n- Ensures stable BLE gateway service\n- Translations in 11 languages\n\n###  Bilingual Documentation | 中英並列文件\n- BLE_PROTOCOL_GUIDE.md: Complete bilingual rewrite\n- GLASSES_LOG_COLLECTION.md: Phone + glasses log collection guide\n\n###  Bug Fixes\n- Fixed native library JNI init crash\n\n---\n\n##  APK Downloads\n\n| APK | Description |\n|-----|-------------|\n| **app-release.apk** | Phone app (M365 BLE + Rokid Gateway) |\n| **glass-hud-release.apk** | Glasses app (Rokid AR HUD) |\n\n---\n\n**Full Changelog**: https://github.com/zero2005x/M365-Rokid-HUD/compare/v1.0...v1.1",
           "changes": []
         },
         {
-          "version": "1.1.0",
-          "date": "2026-08-07",
-          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
-          "notes": "Fix bug when switching channels",
+          "version": "1.0.0",
+          "date": "2026-01-03T09:41:54Z",
+          "sourceReleaseUrl": "https://github.com/zero2005x/M365-Rokid-HUD/releases/tag/v1.0.0",
+          "notes": "# M365 BLE App v1.0.0\n\n🎉 **Initial Release**\n\n## Features\n\n### Phone App (M365-BLE-App)\n- 🔍 BLE Scanner - Discover nearby M365 scooters automatically\n- 🔐 Secure Registration - ECDH key exchange for first-time pairing\n- 🔑 Token-based Login - Fast reconnection with saved credentials\n- 📊 Real-time Telemetry - Monitor speed, battery, temperature, and more\n- 🔒 Motor Lock/Unlock - Remote scooter control\n- 💡 Tail Light Control - Toggle tail light on/off\n- 🕶️ Rokid HUD Gateway - Broadcast telemetry to AR glasses\n- 🌍 Multi-language Support - 11 languages supported\n\n### Glasses App (M365-Glass-HUD)\n- 📺 AR HUD Display - Speed, scooter battery, phone battery, glasses battery, time\n- 🔗 Auto-connect to phone Gateway via BLE\n\n## Downloads\n\n| File | Description |\n|------|-------------|\n| `M365-BLE-App-v1.0.0.apk` | Phone app (Android 10+) |\n| `M365-Glass-HUD-v1.0.0.apk` | Rokid glasses HUD app |\n\n## Installation\n\n1. Download the APK for your device\n2. Enable \"Install from unknown sources\" in Android settings\n3. Install the APK\n\n## Requirements\n\n- **Phone App**: Android 10 (API 29) or higher\n- **Glasses App**: Rokid AR glasses\n\n---\n\n⚠️ **Note**: Registration will unpair the scooter from other apps (e.g., Mi Home). Only register devices you own.",
           "changes": []
         }
       ],
-      "screenshotAssets": [
-        "ek-world-radio.jpg"
-      ],
-      "phoneRequired": false,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKWorldRadio_v2.1.0.apk",
-          "sha256": "a3e5fa0b632eeab5e6ef87db22fb79f6a81d869a475c57d273921c6f2ad1b8bc",
-          "sizeBytes": 6938261,
-          "packageName": "kr.pe.eung.ekworldradio",
-          "versionCode": 3,
-          "versionName": "2.1.0"
-        }
-      ],
-      "author": "EUNG SOFT",
-      "sourceUrl": "https://github.com/eung3392/eungsoft/tree/main/download/RokidGlasses/EKWorldRadio",
-      "newUntil": "2026-08-12T08:39:34.000Z",
-      "iconAsset": "ek-world-radio.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-world-radio.png",
-      "screenshotUrls": [
-        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-world-radio.jpg"
-      ]
+      "publishedAt": "2026-09-11T16:13:26Z",
+      "newUntil": "2026-09-13T16:13:26.000Z",
+      "iconAsset": "m365-rokid-hud.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/m365-rokid-hud.png",
+      "screenshotAssets": []
     },
     {
       "id": "rokid-relay",
@@ -440,6 +232,108 @@
       ]
     },
     {
+      "id": "r08-access-bridge",
+      "name": "R08 Access Bridge",
+      "category": "Navigation",
+      "type": "glasses",
+      "version": "2.0.1",
+      "featured": true,
+      "featuredRank": 2,
+      "summary": "Use the R08 smart ring as a navigation controller for Rokid glasses",
+      "description": "R08 Access Bridge pairs an R08 smart ring via Bluetooth LE to control Rokid glasses navigation. It translates ring input into launcher navigation, app focus movement, activation, and Back actions using an Accessibility Service.",
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/R08-Access-Bridge",
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/R08-Access-Bridge/releases/download/v2.0.1/R08-Access-Bridge-v2.0.1.apk",
+          "sha256": "97b674932eb504a54dc78ff625d772943f10149c475a8e0389649b448d3ec26e",
+          "sizeBytes": 18544074,
+          "packageName": "com.anezium.r08accessbridge",
+          "versionCode": 36,
+          "versionName": "2.0.1"
+        }
+      ],
+      "releases": [
+        {
+          "version": "2.0.1",
+          "date": "2026-08-11T11:58:10Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v2.0.1",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "2.0.0",
+          "date": "2026-08-04T15:11:10Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v2.0.0",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.7.0",
+          "date": "2026-07-23T22:25:23Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.7.0",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.6.4",
+          "date": "2026-07-15T11:12:42Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.6.4",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.6.1",
+          "date": "2026-07-08T17:32:37Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.6.1",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.5.0",
+          "date": "2026-07-03T11:44:31Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.5.0",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.8-unsigned.apk",
+          "date": "2026-07-02T20:58:19Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.8",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.7",
+          "date": "2026-06-28T11:02:53Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/R08-Access-Bridge/releases/tag/v1.4.7",
+          "notes": null,
+          "changes": []
+        }
+      ],
+      "screenshotAssets": [
+        "r08-access-bridge.png",
+        "r08-access-bridge-2.png",
+        "r08-access-bridge-3.png",
+        "r08-access-bridge-4.png"
+      ],
+      "listing": {
+        "descriptionMarkdown": "# About\nR08 Access Bridge lets you use an R08 smart ring as a one-axis navigation controller for Rokid glasses. It pairs with the ring over Bluetooth LE and converts ring inputs into launcher navigation, app focus movement, activation, and Android Back actions.\n\n# Key Features\n- Connects or reconnects to an R08 ring via Bluetooth LE\n- Default Stable mode emits media key events for reliable one-step launcher navigation\n- Supports Fast mode with accelerated launcher swipes and Touch fallback mode\n- Remap triple and quadruple tap actions directly from the glasses UI\n- Provides an AppType probe screen for testing ring output modes\n- Safe Forget R08 flow to remove Bluetooth bond and pair again\n\n# Controls\n- Forward/backward ring slides move launcher or app focus\n- Single tap activates the focused item\n- Double tap performs Android Back\n- Triple and quadruple taps are configurable (default triple tap opens Rokid AI assistant)\n\n# Requirements\n- Rokid glasses with Android SDK 28+\n- R08 smart ring with Bluetooth LE\n- Accessibility permission enabled for R08 Access Bridge\n\n# Notes\n- Stable mode is recommended for most users\n- Fast mode is for devices with stable visual focus alignment\n- Touch fallback is for debugging or when media key input is unavailable\n- Designed specifically for Rokid glasses HUD, not phone-first UI"
+      },
+      "publishedAt": "2026-08-11T11:58:10Z",
+      "newUntil": "2026-08-13T11:58:10.000Z",
+      "iconAsset": "r08-access-bridge.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/r08-access-bridge.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-2.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-3.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/r08-access-bridge-4.png"
+      ]
+    },
+    {
       "id": "ek-meta-player",
       "name": "EK Meta Player",
       "category": "Utility",
@@ -495,10 +389,10 @@
       "name": "Rokid Live Studio",
       "category": "Media",
       "type": "combo",
-      "version": "0.1.6",
+      "version": "0.1.7",
       "featured": true,
       "featuredRank": 4,
-      "publishedAt": "2026-07-03T14:12:24Z",
+      "publishedAt": "2026-08-24T20:38:59Z",
       "summary": "Stream Rokid glasses camera and mic to YouTube or Twitch via your phone with chat overlay support",
       "description": "Rokid Live Studio streams your Rokid Glasses camera and microphone through your phone to YouTube or Twitch. It supports both stream key and OAuth modes, including live chat display on the glasses overlay. The app uses Wi-Fi Direct for direct glasses-to-phone connection without a router.",
       "listing": {
@@ -506,6 +400,16 @@
         "descriptionMarkdown": "# About\nRokid Live Studio streams the camera and microphone feed from your Rokid Glasses to YouTube or Twitch using your phone. It supports preview, encoding, and live chat display on the glasses overlay.\n\n# Key Features\n- Stream Rokid Glasses camera and mic to YouTube or Twitch\n- Supports stream key and OAuth modes for both platforms\n- Displays live chat messages inside the glasses helper overlay\n- Uses Wi-Fi Direct for direct glasses-to-phone connection without needing a home router\n- Phone handles preview, rotation, encoding, and platform API calls\n\n# How It Works\n1. Phone connects to Rokid Glasses via Wi-Fi Direct\n2. Glasses send H.264 video and AAC audio to the phone\n3. Phone encodes and streams to YouTube or Twitch\n4. Chat messages can be fetched and shown on the glasses overlay in OAuth mode\n\n# Requirements\n- Rokid Glasses with helper app installed\n- Android phone running Android 31 or higher\n- YouTube or Twitch account for streaming\n\n# Notes\n- Rokid Glasses may overheat and drain battery quickly during long streams; use external power if needed\n- Stream key mode offers simpler setup but limited metadata control\n- OAuth mode enables live metadata control and chat integration\n- Outdoor streaming possible without a home router thanks to Wi-Fi Direct"
       },
       "releases": [
+        {
+          "version": "0.1.7",
+          "date": "2026-08-24T20:38:59Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Live-Studio/releases/tag/v0.1.7%2B8",
+          "notes": "## What's new\n\n### Custom RTMP destination\nStream to any `rtmp://` or `rtmps://` endpoint — IRL relays, restreaming gateways, self-hosted servers. No YouTube or Twitch account involved: just paste your server URL and stream key in the new **Custom RTMP** tab. Resolution, rotation (for 16:9 landscape output) and bitrate controls work exactly like the other destinations.\n\n### Anonymous Twitch chat\nRead a Twitch channel's chat on the glasses with **only a channel name** — no OAuth token, no client ID, no developer app. Available from the Custom RTMP tab, works with or without an active stream. (The OAuth-based Twitch chat is still there for people who already set it up.)\n\n### Fixes\n- The RTMP publisher now falls back to the default network when its selected network binding goes stale (previously the stream could fail to start with repeated reconnect errors).\n- Fixed the Gradle wrapper distribution checksum, which broke builds on machines with no cached Gradle distribution.\n\n## Assets\n- `rokid-live-studio-phone-0.1.7-vc8.apk` — install on your Android phone (bundles the glasses helper).\n- `rokid-live-studio-glasses-helper-0.1.5-vc6.apk` — glasses helper (unchanged since 0.1.5), for manual ADB installs only; the phone app installs it for you otherwise.",
+          "changes": [
+            "The RTMP publisher now falls back to the default network when its selected network binding goes stale (previously the stream could fail to start with repeated reconnect errors).",
+            "Fixed the Gradle wrapper distribution checksum, which broke builds on machines with no cached Gradle distribution."
+          ]
+        },
         {
           "version": "0.1.6",
           "date": "2026-07-03T14:12:24Z",
@@ -569,17 +473,17 @@
       "artifacts": [
         {
           "target": "phone",
-          "url": "https://github.com/Anezium/Rokid-Live-Studio/releases/download/v0.1.6%2B7/rokid-live-studio-phone-0.1.6-vc7.apk",
-          "sha256": "9cca9e84fc7cb040ec2e66b9a7a370c3a17bd0bd78ddbc7c24cf5a9f55855695",
-          "sizeBytes": 38906011,
+          "url": "https://github.com/Anezium/Rokid-Live-Studio/releases/download/v0.1.7%2B8/rokid-live-studio-phone-0.1.7-vc8.apk",
+          "sha256": "7ec874bab6d7b396d19fe985c1b559f7912a570e50dcb16f0cd2f332932e5ca8",
+          "sizeBytes": 39004323,
           "packageName": "com.anezium.rokidlive.phone",
-          "versionCode": 7,
-          "versionName": "0.1.6"
+          "versionCode": 8,
+          "versionName": "0.1.7"
         }
       ],
       "author": "Anezium",
       "sourceUrl": "https://github.com/Anezium/Rokid-Live-Studio",
-      "newUntil": "2026-07-05T14:12:24.000Z",
+      "newUntil": "2026-08-26T20:38:59.000Z",
       "iconAsset": "rokid-live-studio.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-live-studio.png",
       "screenshotUrls": [
@@ -1320,6 +1224,65 @@
       ]
     },
     {
+      "id": "ek-world-radio",
+      "name": "EK World Radio",
+      "category": "Media",
+      "type": "glasses",
+      "version": "2.1.0",
+      "publishedAt": "2026-08-10T08:39:34Z",
+      "summary": "Listen to global radio stations easily",
+      "description": "Stream radio stations from around the world on Rokid Glasses. The app resumes your last station automatically and requires a Wi-Fi connection.",
+      "listing": {
+        "descriptionMarkdown": "## About\nStream radio stations from around the world on Rokid Glasses. EK World Radio automatically resumes the last station you listened to when you reopen the app.\n\nA Wi-Fi connection is required for streaming.\n\n## Controls\n\n- **Browse channels:** Touch the right temple of the glasses to switch stations.\n- **Resume playback:** Your last station starts again when you reopen the app.\n- **Network:** Keep Wi-Fi connected for uninterrupted listening."
+      },
+      "releases": [
+        {
+          "version": "2.1.0",
+          "date": "2026-08-10T08:39:34Z",
+          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "2.0.0",
+          "date": "2026-08-07",
+          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+          "notes": "Latest public build from EUNG SOFT's shared Rokid Glasses release.",
+          "changes": []
+        },
+        {
+          "version": "1.1.0",
+          "date": "2026-08-07",
+          "sourceReleaseUrl": "https://github.com/eung3392/eungsoft/releases/tag/RokidGlassesApp",
+          "notes": "Fix bug when switching channels",
+          "changes": []
+        }
+      ],
+      "screenshotAssets": [
+        "ek-world-radio.jpg"
+      ],
+      "phoneRequired": false,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/eung3392/eungsoft/releases/download/RokidGlassesApp/EKWorldRadio_v2.1.0.apk",
+          "sha256": "a3e5fa0b632eeab5e6ef87db22fb79f6a81d869a475c57d273921c6f2ad1b8bc",
+          "sizeBytes": 6938261,
+          "packageName": "kr.pe.eung.ekworldradio",
+          "versionCode": 3,
+          "versionName": "2.1.0"
+        }
+      ],
+      "author": "EUNG SOFT",
+      "sourceUrl": "https://github.com/eung3392/eungsoft/tree/main/download/RokidGlasses/EKWorldRadio",
+      "newUntil": "2026-08-12T08:39:34.000Z",
+      "iconAsset": "ek-world-radio.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/ek-world-radio.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/ek-world-radio.jpg"
+      ]
+    },
+    {
       "id": "ek-home",
       "name": "EKHome",
       "category": "Launcher",
@@ -1907,8 +1870,8 @@
       "name": "JSOS",
       "category": "AI",
       "type": "combo",
-      "version": "2.0.38-r08-accessibility-recovery",
-      "publishedAt": "2026-08-03T16:28:38Z",
+      "version": "2.0.41-cxrl-photo-jsos-voice",
+      "publishedAt": "2026-08-28T00:21:06Z",
       "summary": "Spatial OS interface for OpenClaw and Rokid glasses with voice, sessions, and HUD control",
       "description": "JSOS is a development-preview Android interface connecting Rokid glasses to a local or private OpenClaw Gateway. It manages voice input, sessions, HUD rendering, and device pairing across phone and glasses apps.",
       "screenshotAssets": [
@@ -1924,21 +1887,21 @@
       "artifacts": [
         {
           "target": "glasses",
-          "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.38-r08-accessibility-recovery/JSOS-HUD-v2.0.36-r08-accessibility-recovery.apk",
-          "sha256": "913a1c804a6326a4dba8e4a825c565ee23dd37e6418059e6e4796256707bd876",
-          "sizeBytes": 21584815,
+          "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.41-cxrl-photo-jsos-voice/JSOS-HUD-v2.0.38-jsos-voice-assistant-block.apk",
+          "sha256": "3522414050319b82dd14d0463ef34cdc99429d0f361113f6447484609cbee8ac",
+          "sizeBytes": 21584823,
           "packageName": "com.jsos.glasses",
-          "versionCode": 237,
-          "versionName": "2.0.36-r08-accessibility-recovery"
+          "versionCode": 239,
+          "versionName": "2.0.38-jsos-voice-assistant-block"
         },
         {
           "target": "phone",
-          "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.36-security-hardening/JSOS-Core-v2.0.12-security-hardening.apk",
-          "sha256": "b64c3efd1392f905f3a91e98caa099b8359977ad404ba15046c9d42d358b470f",
-          "sizeBytes": 53395815,
+          "url": "https://github.com/IWhatsskill/JSOS/releases/download/v2.0.41-cxrl-photo-jsos-voice/JSOS-Core-v2.0.15-cxrl-photo-capture.apk",
+          "sha256": "897b2be084528579a41bc0c293dea7f6c8cb7e38601951d0e09c7a0da0557034",
+          "sizeBytes": 53595196,
           "packageName": "com.jsos.phone",
-          "versionCode": 212,
-          "versionName": "2.0.12-security-hardening"
+          "versionCode": 215,
+          "versionName": "2.0.15-cxrl-photo-capture"
         }
       ],
       "author": "IWhatsskill",
@@ -1947,6 +1910,22 @@
         "descriptionMarkdown": "# About JSOS\n\nJSOS is a spatial operating system interface designed for Rokid smart glasses and a companion Android phone app. It connects to a local or private OpenClaw Gateway to manage AI sessions, voice input, and HUD deployment.\n\n## Key Features\n\n- **JSOS Core (Phone App):** Connects to OpenClaw Gateway, manages sessions, voice input, TTS settings, camera handoff, Rokid pairing, and HUD deployment.\n- **JSOS HUD (Glasses App):** Renders a green monochrome HUD on Rokid glasses, handles touchpad and ring gestures, staged voice input, session display, photo capture, and AR scene triggers.\n- **Voice Input:** Supports OpenAI Realtime speech-to-text, Android SpeechRecognizer fallback, and OpenClaw Live Talk.\n- **Bluetooth Media-Ring Control:** Experimental support for HUD navigation via phone-side media button events.\n- **Session Management:** Session listing, switching, chat streaming, and history.\n- **Experimental Admin Codex Bridge:** Optional private bridge for CLI-style output on phone and glasses.\n\n## How It Works\n\n- The phone app (JSOS Core) connects to the OpenClaw Gateway over WebSocket and to the glasses via Bluetooth CXR.\n- JSOS Core handles voice recognition, session routing, and HUD deployment.\n- JSOS HUD runs on Rokid glasses, displaying chat, managing input, and controlling AR camera features.\n\n## Controls (Glasses HUD)\n\n- Swipe forward/backward to navigate HUD items.\n- Tap to confirm actions or scroll.\n- Double tap to focus menus or cancel overlays.\n- Long press to start voice input.\n- Use bottom menu buttons for photo capture, session picker, voice mode toggle, display size, commands, and options.\n\n## Requirements\n\n- Android phone with JSOS Core installed.\n- Rokid glasses with JSOS HUD installed.\n- Access to a running OpenClaw Gateway reachable by the phone.\n- Rokid CXR SDK credentials.\n- Optional OpenAI and ElevenLabs API keys for enhanced voice and TTS features.\n\n## Notes\n\n- JSOS is a development-preview project and not a finished consumer product.\n- The Admin Codex bridge and some voice features are experimental.\n- Installation typically involves side-loading APKs from GitHub Releases.\n- Rokid glasses firmware and proprietary SDK are required for full functionality."
       },
       "releases": [
+        {
+          "version": "2.0.41-cxrl-photo-jsos-voice",
+          "date": "2026-08-28T00:21:06Z",
+          "sourceReleaseUrl": "https://github.com/IWhatsskill/JSOS/releases/tag/v2.0.41-cxrl-photo-jsos-voice",
+          "notes": "# JSOS v2.0.41 CXR-L photo and JSOS voice preview\n\nThis preview restores photo capture through Hi Rokid and makes the glasses\nhardware hold open JSOS voice without briefly showing the native Rokid\nassistant.\n\n## What changed\n\n- Routed photo capture through whichever glasses transport is active, including\n  the Global Hi Rokid CXR-L connection.\n- Added a scoped camera response callback with timeout and clear failure\n  reporting when the glasses do not return a photo.\n- Made a hardware hold of about 1.3 seconds open JSOS voice directly.\n- Blocked the native Rokid assistant start only while that JSOS voice action is\n  active, preventing the assistant from flashing before the microphone opens.\n- Kept a one-shot accessibility fallback for Rokid versions that start the\n  native assistant before the ordered broadcast can be stopped.\n- Distinguished the native Rokid assistant screen from JavaScript AIUI screens,\n  so regular AIUI and ring interactions remain available.\n- Left the normal Rokid assistant unchanged outside an active JSOS voice hold.\n\n## Included assets\n\n- `JSOS-Core-v2.0.15-cxrl-photo-capture.apk`\n  - package `com.jsos.phone`\n  - versionCode `215`\n  - versionName `2.0.15-cxrl-photo-capture`\n- `JSOS-HUD-v2.0.38-jsos-voice-assistant-block.apk`\n  - package `com.jsos.glasses`\n  - versionCode `239`\n  - versionName `2.0.38-jsos-voice-assistant-block`\n- `SHA256SUMS.txt`\n\nBoth APKs are non-debuggable and signed with the established JSOS Preview\ncertificate using APK Signature Scheme v2.\n\n## Verification boundary\n\n- Core Debug unit tests: `34 / 34 PASS`\n- Core Release unit tests: `34 / 34 PASS`\n- Core and HUD `lintVitalRelease`: `PASS`\n- Core and HUD signed Release builds: `PASS`\n- Source and expanded APK secret/private-marker scans: `PASS`\n- APK package, version, label, signer and SHA-256 checks: `PASS`\n\nThe device behavior was tested during development. These final Public APKs were\nbuilt and statically verified locally but were not installed again after the\nfinal release build.\n\n## Thanks\n\nThanks to [@plizer123](https://github.com/plizer123) for reporting the CXR-L\nhardware-button and photo-capture problem in\n[issue #4](https://github.com/IWhatsskill/JSOS/issues/4).\n\nJSOS is distributed under AGPL-3.0. Attribution and third-party notices remain\navailable in `COPYRIGHT` in the source repository.",
+          "changes": [
+            "Routed photo capture through whichever glasses transport is active, including",
+            "Added a scoped camera response callback with timeout and clear failure",
+            "Made a hardware hold of about 1.3 seconds open JSOS voice directly.",
+            "Blocked the native Rokid assistant start only while that JSOS voice action is",
+            "Kept a one-shot accessibility fallback for Rokid versions that start the",
+            "Distinguished the native Rokid assistant screen from JavaScript AIUI screens,",
+            "Left the normal Rokid assistant unchanged outside an active JSOS voice hold.",
+            "package com.jsos.phone"
+          ]
+        },
         {
           "version": "2.0.38-r08-accessibility-recovery",
           "date": "2026-08-03T16:28:38Z",
@@ -2019,7 +1998,7 @@
           "changes": []
         }
       ],
-      "newUntil": "2026-08-05T16:28:38.000Z",
+      "newUntil": "2026-08-30T00:21:06.000Z",
       "iconAsset": "jsos.png",
       "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/jsos.png",
       "screenshotUrls": [
@@ -2123,69 +2102,6 @@
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/lume-reader-playing.png",
         "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/lume-reader-paused.png"
       ]
-    },
-    {
-      "id": "m365-rokid-hud",
-      "name": "M365 Rokid HUD",
-      "category": "Mobility",
-      "type": "combo",
-      "version": "1.3.1",
-      "summary": "BLE scooter telemetry HUD for Rokid glasses with real-time Xiaomi M365 data display",
-      "description": "M365 Rokid HUD connects to Xiaomi M365 scooters via BLE to show real-time telemetry on Rokid AR glasses. The phone app manages BLE and the glasses app renders the HUD. Requires Android 10+ and Bluetooth permissions.",
-      "phoneRequired": true,
-      "artifacts": [
-        {
-          "target": "glasses",
-          "url": "https://github.com/zero2005x/M365-Rokid-HUD/releases/download/v1.3.1/M365-Rokid-HUD-glasses-v1.3.1.apk",
-          "sha256": "37ac5f00acc61df3147db6ff429e3776d852611c9af738c08459b53990bfb31d",
-          "sizeBytes": 11919494,
-          "packageName": "com.m365hud.glass",
-          "versionCode": 4,
-          "versionName": "1.3.1"
-        },
-        {
-          "target": "phone",
-          "url": "https://github.com/zero2005x/M365-Rokid-HUD/releases/download/v1.3.1/M365-Rokid-HUD-phone-v1.3.1.apk",
-          "sha256": "d5b4184dc37efaa6314333e6fca01974451ff90af986dbd95818d8c987e6e3a7",
-          "sizeBytes": 25249809,
-          "packageName": "com.m365bleapp",
-          "versionCode": 6,
-          "versionName": "1.3.1"
-        }
-      ],
-      "author": "zero2005x",
-      "sourceUrl": "https://github.com/zero2005x/M365-Rokid-HUD",
-      "listing": {
-        "descriptionMarkdown": "# About\nM365 Rokid HUD is an Android app that connects to Xiaomi/Ninebot M365 electric scooters via Bluetooth Low Energy (BLE) and displays real-time telemetry on Rokid AR glasses as a heads-up display (HUD).\n\n# Key Features\n- Automatic BLE scanning and discovery of nearby M365 scooters\n- Secure pairing with ECDH key exchange and token-based login\n- Real-time telemetry including speed, battery, temperature, and mileage\n- Remote motor lock/unlock and tail light control\n- Signal quality and data freshness indicators on the HUD\n- Multi-language support (11 languages)\n- Modern UI built with Jetpack Compose and Material3\n\n# How It Works\n- The phone app connects to the scooter via BLE and handles all communication.\n- Enable the \"Rokid HUD Gateway\" on the phone app to broadcast telemetry data.\n- The Rokid glasses app scans for the phone's gateway and displays telemetry in AR.\n\n# Requirements\n- Android 10 (API 29) or higher on the phone\n- Bluetooth and Location permissions for BLE scanning\n- Rokid AR glasses with the companion HUD app installed\n\n# Notes\n- Registration unpairs the scooter from other apps; register only your own devices.\n- Disable battery optimization on the phone app to maintain stable BLE connection.\n- The HUD shows speed, scooter battery, phone battery, glasses battery, current time, and signal quality.\n\n# Source\n[GitHub Repository](https://github.com/zero2005x/M365-Rokid-HUD)"
-      },
-      "releases": [
-        {
-          "version": "1.3.1",
-          "date": "2026-08-08T09:24:24Z",
-          "sourceReleaseUrl": "https://github.com/zero2005x/M365-Rokid-HUD/releases/tag/v1.3.1",
-          "notes": "<html>\n<body>\n<html><head></head><body><h1>v1.3.1 — Glasses APK &amp; Release Automation | 眼鏡端 APK 與發布自動化</h1>\n<p>This is a <strong>packaging and build-correctness release</strong>. The phone app's\napplication code is unchanged from v1.3; everything below concerns the glasses\napp, the native library, and how releases are produced.</p>\n<p>這是一次<strong>打包與建置正確性</strong>的發布。手機端的應用程式碼與 v1.3 相同；以下變更集中在眼鏡端、原生函式庫，以及發布流程本身。</p>\n<hr>\n<h2>Downloads | 下載</h2>\n\nAPK | Description | 說明 | Size\n-- | -- | -- | --\nM365-Rokid-HUD-phone-v1.3.1.apk | Phone app — M365 BLE client + Rokid gateway | 手機端 — M365 BLE 用戶端 + Rokid 閘道 | 24.6 MB\nM365-Rokid-HUD-glasses-v1.3.1.apk | Glasses app — Rokid AR HUD display | 眼鏡端 — Rokid AR 抬頭顯示器 | 11.4 MB\nSHA256SUMS.txt | Checksums for both APKs | 兩顆 APK 的雜湊值 | —\n\n<hr>\n<h2>Known Limitations | 已知限制</h2>\n<ul>\n<li><strong>CXR-M channel discovery is not implemented.</strong> <code>UnifiedConnectionManager</code>\ncannot obtain an ARTC channel id automatically, so the CXR-M path falls back\nto Wi-Fi or BLE unless a channel id is supplied explicitly. The R8 fix above\nmakes the transport <em>reachable</em>; it does not complete the discovery mechanism.\n<strong>CXR-M 頻道探索尚未實作。</strong> <code>UnifiedConnectionManager</code> 無法自動取得 ARTC channel\nid，因此除非明確指定，CXR-M 路徑會退回 Wi-Fi 或 BLE。上述 R8 修正讓該傳輸<em>可被觸及</em>，\n但並未完成探索機制。</li>\n<li>The glasses release build now runs R8 for the first time. If you encounter\nbehaviour that differs from a debug build, please open an issue.\n眼鏡端 release 版本首次啟用 R8。若發現與 debug 版本行為不同，請回報 issue。</li>\n</ul>\n<hr>\n<h2>Upgrade Notes | 升級說明</h2>\n<p>Coming from <strong>v1.3</strong>: install both APKs. The phone app's behaviour is unchanged;\nthe glasses app gains a working CXR-M code path and is signed and versioned\nalongside the phone app for the first time.</p>\n<p>從 <strong>v1.3</strong> 升級：請安裝兩顆 APK。手機端行為不變；眼鏡端修復了 CXR-M 程式路徑，\n並首次與手機端採用一致的簽章與版本編號。</p>\n<p>Coming from <strong>v1.1 or earlier</strong>: see the v1.3 release notes for the Wi-Fi\ngateway and security hardening changes introduced there.</p>\n<p>從 <strong>v1.1 或更早版本</strong>升級：Wi-Fi 閘道與安全性強化的內容請參閱 v1.3 的發布說明。</p>\n<p><strong>Full Changelog</strong>: https://github.com/zero2005x/M365-Rokid-HUD/compare/v1.3...v1.3.1</p></body></html>\n</body>\n</html>",
-          "changes": []
-        },
-        {
-          "version": "1.1",
-          "date": "2026-01-11T08:03:13Z",
-          "sourceReleaseUrl": "https://github.com/zero2005x/M365-Rokid-HUD/releases/tag/v1.1",
-          "notes": "##  New Features | 新功能\n\n###  Connection Quality Indicator | 連線品質指標\n- Real-time signal strength display on glasses HUD\n- Stale data warning when telemetry delayed > 2 seconds\n- Session statistics: packets, RSSI avg/min/max, reconnect count\n\n###  Battery Optimization | 電池優化\n- Phone app now prompts user to disable battery optimization\n- Ensures stable BLE gateway service\n- Translations in 11 languages\n\n###  Bilingual Documentation | 中英並列文件\n- BLE_PROTOCOL_GUIDE.md: Complete bilingual rewrite\n- GLASSES_LOG_COLLECTION.md: Phone + glasses log collection guide\n\n###  Bug Fixes\n- Fixed native library JNI init crash\n\n---\n\n##  APK Downloads\n\n| APK | Description |\n|-----|-------------|\n| **app-release.apk** | Phone app (M365 BLE + Rokid Gateway) |\n| **glass-hud-release.apk** | Glasses app (Rokid AR HUD) |\n\n---\n\n**Full Changelog**: https://github.com/zero2005x/M365-Rokid-HUD/compare/v1.0...v1.1",
-          "changes": []
-        },
-        {
-          "version": "1.0.0",
-          "date": "2026-01-03T09:41:54Z",
-          "sourceReleaseUrl": "https://github.com/zero2005x/M365-Rokid-HUD/releases/tag/v1.0.0",
-          "notes": "# M365 BLE App v1.0.0\n\n🎉 **Initial Release**\n\n## Features\n\n### Phone App (M365-BLE-App)\n- 🔍 BLE Scanner - Discover nearby M365 scooters automatically\n- 🔐 Secure Registration - ECDH key exchange for first-time pairing\n- 🔑 Token-based Login - Fast reconnection with saved credentials\n- 📊 Real-time Telemetry - Monitor speed, battery, temperature, and more\n- 🔒 Motor Lock/Unlock - Remote scooter control\n- 💡 Tail Light Control - Toggle tail light on/off\n- 🕶️ Rokid HUD Gateway - Broadcast telemetry to AR glasses\n- 🌍 Multi-language Support - 11 languages supported\n\n### Glasses App (M365-Glass-HUD)\n- 📺 AR HUD Display - Speed, scooter battery, phone battery, glasses battery, time\n- 🔗 Auto-connect to phone Gateway via BLE\n\n## Downloads\n\n| File | Description |\n|------|-------------|\n| `M365-BLE-App-v1.0.0.apk` | Phone app (Android 10+) |\n| `M365-Glass-HUD-v1.0.0.apk` | Rokid glasses HUD app |\n\n## Installation\n\n1. Download the APK for your device\n2. Enable \"Install from unknown sources\" in Android settings\n3. Install the APK\n\n## Requirements\n\n- **Phone App**: Android 10 (API 29) or higher\n- **Glasses App**: Rokid AR glasses\n\n---\n\n⚠️ **Note**: Registration will unpair the scooter from other apps (e.g., Mi Home). Only register devices you own.",
-          "changes": []
-        }
-      ],
-      "publishedAt": "2026-08-08T09:24:24Z",
-      "newUntil": "2026-08-10T09:24:24.000Z",
-      "iconAsset": "m365-rokid-hud.png",
-      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/m365-rokid-hud.png",
-      "screenshotAssets": []
     },
     {
       "id": "matrix-vision",
@@ -2865,6 +2781,139 @@
       },
       "releases": [],
       "screenshotAssets": []
+    },
+    {
+      "id": "rokid-nexus",
+      "name": "Rokid Nexus",
+      "category": "Launcher",
+      "type": "combo",
+      "version": "1.4.7",
+      "summary": "Rokid Nexus plugin platform for Rokid Glasses RV101 with phone app integration",
+      "description": "Rokid Nexus is a plugin platform for Rokid AR glasses that uses a phone app to install and manage glasses apps. Plugins run isolated on the glasses HUD and update via the phone app store.",
+      "author": "Anezium",
+      "sourceUrl": "https://github.com/Anezium/Rokid-Nexus",
+      "phoneRequired": true,
+      "artifacts": [
+        {
+          "target": "glasses",
+          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.4.7/nexus-glasses-1.4.7.apk",
+          "sha256": "9c0005be631015de0562383bc5f8e1d93c5c4d9ff41711d57f91db9c9b6b6e26",
+          "sizeBytes": 19293319,
+          "packageName": "com.anezium.rokidbus.glasses",
+          "versionCode": 10407,
+          "versionName": "1.4.7"
+        },
+        {
+          "target": "phone",
+          "url": "https://github.com/Anezium/Rokid-Nexus/releases/download/v1.4.7/nexus-phone-1.4.7.apk",
+          "sha256": "8a7c938b06ad83c68e648db2b012f23c3f7a745b2ce245d1e0c08f345cd3924b",
+          "sizeBytes": 18572229,
+          "packageName": "com.anezium.rokidbus.phone",
+          "versionCode": 10407,
+          "versionName": "1.4.7"
+        }
+      ],
+      "releases": [
+        {
+          "version": "1.4.7",
+          "date": "2026-09-07T19:29:12Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.7",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.4.3",
+          "date": "2026-08-11T22:13:23Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.4.3",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.2.11",
+          "date": "2026-08-07T19:10:51Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.2.11",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.2.6",
+          "date": "2026-08-06T22:50:10Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.2.6",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.1.3",
+          "date": "2026-08-01T00:02:48Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.1.3",
+          "notes": null,
+          "changes": []
+        },
+        {
+          "version": "1.0.48",
+          "date": "2026-07-29T00:03:13Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.0.48",
+          "notes": "### Activities\n\n- A new tier between a pin and a surface: an ongoing process — a ride\n  approaching, a timer running, a transfer in flight — holds a stable corner\n  of the HUD. It draws as a compact chip, and the primary activity can open\n  into a panel with progress, details, and up to three platform-drawn\n  actions the wearer steps through with scroll and fires with a tap.\n- A significant update lets the panel flare to catch the eye — throttled by\n  the platform, and never by holding the screen on: an activity still cannot\n  wake or keep the display, exactly like every other tier.\n- An idle panel folds back to its chip after about ten seconds. A new\n  Settings switch keeps the primary activity expanded instead; it is the\n  wearer's preference, and no plugin can read, set, or override it.\n\n### Notices learn to ask a real question\n\n- A notice can now carry up to three answers, drawn as glyph chips under\n  the band — the same row an activity panel uses, drawn by the same view,\n  so the wearer learns it once. Scroll steps along it, the selection wraps\n  and follows its answer across updates, and a tap fires the one that is\n  chosen.\n- A notice takes exactly one answer, of either kind. The moment it is\n  given, the row leaves the band, nothing fires again, and the phone\n  refuses a duplicate — measured on hardware, two temple taps 188 ms apart\n  used to mean two replies sent. This deliberately changes 1.0.46\n  behaviour, where an interactive band replied on every tap.\n- Clearing a field of a shown notice now actually reaches the glasses: the\n  phone relays the patch a plugin sent instead of re-serialising its own\n  state, so an emptied footer, a withdrawn question, or a cleared row\n  arrives as exactly that.\n\n### Plugin SDK 0.6.0\n\n- The activity tier and notice actions land in the SDK: `NexusActivity`,\n  `NexusNoticeAction`, `actions` on notices and their updates, the\n  `onNexusActivityAction` and `onNexusNoticeAction` callbacks, and a\n  nullable `interactive` on `NexusNoticeUpdate` so a band can be asked\n  again.\n- The guide gains a visual reference of the notice band's four states,\n  with the one-answer rule as an interactive demo\n  (`docs/notice-band-states.html`).",
+          "changes": [
+            "A new tier between a pin and a surface: an ongoing process — a ride",
+            "A significant update lets the panel flare to catch the eye — throttled by",
+            "An idle panel folds back to its chip after about ten seconds. A new",
+            "A notice can now carry up to three answers, drawn as glyph chips under",
+            "A notice takes exactly one answer, of either kind. The moment it is",
+            "Clearing a field of a shown notice now actually reaches the glasses: the",
+            "The activity tier and notice actions land in the SDK: NexusActivity,",
+            "The guide gains a visual reference of the notice band's four states,"
+          ]
+        },
+        {
+          "version": "1.0.47",
+          "date": "2026-07-28T16:24:12Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.0.47",
+          "notes": "### Phone battery\n\n- Your phone's charge now sits in the glasses' status row, beside the clock\n  and the weather: a small phone glyph and the percentage, with a plus while\n  it charges. The glasses always knew their own battery; now they admit the\n  phone they depend on has one too.\n- The chip behaves like the ROM's own indicators. It shows on the launcher\n  and its screens, follows the status row when an app like the teleprompter\n  moves it, tucks in beside the clock when the weather steps out, and never\n  sits on top of anything.\n- Not interested? Settings has a switch. Off means off — the chip leaves\n  immediately and stays gone.\n\n### Plugin marks\n\n- A plugin's own icon now reaches the glasses. Until now a custom mark showed\n  on the phone and fell back to a generic tile in the glasses launcher, which\n  never had the plugin's APK to load it from; the mark itself now travels, as\n  bare geometry the glasses draw in the HUD's one green.\n- The design system holds: a plugin ships a shape, never a colour, a size, or\n  a look. Tests now catch a mark that drifts from the rules instead of prose\n  hoping it will not.",
+          "changes": [
+            "Your phone's charge now sits in the glasses' status row, beside the clock",
+            "The chip behaves like the ROM's own indicators. It shows on the launcher",
+            "Not interested? Settings has a switch. Off means off — the chip leaves",
+            "A plugin's own icon now reaches the glasses. Until now a custom mark showed",
+            "The design system holds: a plugin ships a shape, never a colour, a size, or"
+          ]
+        },
+        {
+          "version": "1.0.46",
+          "date": "2026-07-26T22:43:53Z",
+          "sourceReleaseUrl": "https://github.com/Anezium/Rokid-Nexus/releases/tag/v1.0.46",
+          "notes": "### Notices\n\n- Plugins can interrupt you briefly with a band across the top of your view: a\n  message that just arrived, a delivery at the door, one thing that happened\n  and is worth a glance. It arrives, says its piece, and leaves on its own.\n- You can answer one without opening anything. Tap the band and the plugin\n  hears you, even though it has no screen open and never did — which is the\n  point of the whole thing. Back always dismisses, and no plugin can take that\n  key away from you.\n- A band claims two gestures, not your glasses. Scroll still reaches whatever\n  is underneath it, the launcher still opens, and every other control keeps\n  working while a notice is up.\n- Nothing can leave a band in your view: it clears on its own deadline, and no\n  amount of updating it pushes past a minute.\n\n### Motion\n\n- The HUD moves now. Bands slide in and out instead of appearing, and the whole\n  interface shares one set of timings rather than each screen inventing its\n  own.\n- Motion marks something happening, never decoration. Nothing on the glasses\n  animates in a loop while you are wearing them and walking around.",
+          "changes": [
+            "Plugins can interrupt you briefly with a band across the top of your view: a",
+            "You can answer one without opening anything. Tap the band and the plugin",
+            "A band claims two gestures, not your glasses. Scroll still reaches whatever",
+            "Nothing can leave a band in your view: it clears on its own deadline, and no",
+            "The HUD moves now. Bands slide in and out instead of appearing, and the whole",
+            "Motion marks something happening, never decoration. Nothing on the glasses"
+          ]
+        }
+      ],
+      "screenshotAssets": [
+        "rokid-nexus-1.png",
+        "rokid-nexus-2.png",
+        "rokid-nexus-3.png",
+        "rokid-nexus-4.png",
+        "rokid-nexus-5.png"
+      ],
+      "listing": {
+        "descriptionMarkdown": "## About\nRokid Nexus is a plugin platform for Rokid AR glasses RV101. It installs a phone app that manages glasses apps, which run as isolated plugins on the glasses HUD.\n\n## Key features\n- Plugins run in separate processes on the glasses, appearing only after user approval\n- Declarative HUD surfaces: cards, timed lines, media decks, and images\n- In-app Nexus Store installs and updates plugins securely with signature verification\n\n## Plugins include\n- Lens: live translation with camera streaming and offline OCR\n- Feeds: Bluesky and X timelines with photo viewing\n- Transit: nearby stops and live departures\n- Lyrics: time-synced lyrics for music playing on the phone\n- Media Deck: now playing info with controls\n- Photos Sync: copies glasses photos to phone gallery\n\n## How it works\n- Install the Nexus phone app\n- Follow onboarding to push the glasses app via Rokid link\n- Enable accessibility service on glasses\n- Install plugins from the Nexus Store\n\n## Requirements\n- Rokid Glasses RV101\n- Companion Android phone (Android 11+)\n\n## Notes\n- Plugins request capabilities per user approval\n- Phone app updates from GitHub releases; glasses and plugins update over the link and store"
+      },
+      "publishedAt": "2026-09-07T19:29:12Z",
+      "newUntil": "2026-09-09T19:29:12.000Z",
+      "iconAsset": "rokid-nexus.png",
+      "iconUrl": "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/icons/rokid-nexus.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-1.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-2.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-3.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-4.png",
+        "https://raw.githubusercontent.com/Anezium/RokidBrew-Registry/main/assets/screenshots/rokid-nexus-5.png"
+      ]
     },
     {
       "id": "rokid-reader",
